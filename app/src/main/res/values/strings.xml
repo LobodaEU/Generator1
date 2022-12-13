@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Генератор Хэштегов</string>
+    <string name="textview">Результат</string>
+    <string name="TextView1">Обязательные слова - напишите сами через ПРОБЕЛ</string>
+    <string name="button1">Генерировать</string>
+    <string name="button2">Копировать</string>
+    <string-array name="profNames">
+        <item>Ноготочки</item>
+        <item>Парикмахерская</item>
+        <item>Приколы</item>
+        <item>Новости</item>
+    </string-array>
+    <string-array name="number">
+        <item>30</item>
+        <item>15</item>
+        <item>20</item>
+        <item>40</item>
+    </string-array>
+</resources>
