@@ -2,13 +2,16 @@
     <string name="app_name">Генератор Хэштегов</string>
     <string name="textview">Результат</string>
     <string name="TextView1">Обязательные слова - напишите сами через ПРОБЕЛ</string>
+    <string name="TextView2">Введите свой список слов и нажмите - сохранить</string>
     <string name="button1">Генерировать</string>
     <string name="button2">Копировать</string>
+    <string name="Save_button">Сохранить список</string>
     <string-array name="profNames">
         <item>Ноготочки</item>
         <item>Парикмахерская</item>
         <item>Приколы</item>
         <item>Новости</item>
+        <item>Свой список</item>
     </string-array>
     <string-array name="number">
         <item>30</item>
