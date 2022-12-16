@@ -1,5 +1,6 @@
 package com.loboda.generator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -33,10 +34,10 @@ Spinner spinner2;
         textInputEditText = (TextInputEditText)  findViewById(R.id.textInputEditText);
         spinner = (Spinner) findViewById(R.id.spinner) ;
         spinner2 = (Spinner) findViewById(R.id.spinner2);
-        String[] nogti = new String[]{};
-        String[] parikmaherskaya = new String[]{};
+        String[] nogti = new String[]{"#ногти","#ноготочки","#маникюр","#сделатьногти", "#дизайнногтей"};
+        String[] parikmaherskaya = new String[]{"#прическа","#укладка","#барбершоп","#барбер", "#стрижка"};
         String[] prikoli = new String[]{"#music","#genre","#song","#songs","#TagsForLikes","#melody","#hiphop","#rnb","#pop","#love","#rap","#dubstep","#instagood","#beat","#beats","#jam","#myjam","#party","#partymusic","#newsong","#lovethissong","#remix","#favoritesong","#bestsong","#photooftheday","#bumpin","#repeat","#listentothis","#goodmusic","#instamusic","#movies","#theatre","#video","#TagsForLikes","#movie","#film","#films","#videos","#actor","#actress","#cinema","#dvd","#amc","#instamovies","#star","#moviestar","#photooftheday","#hollywood","#goodmovie","#instagood","#flick","#flicks","#instaflick","#instaflicks","#videogames","#games","#gamer","#TagsForLikes","#gaming","#instagaming","#instagamer","#playinggames","#online","#photooftheday","#onlinegaming","#videogameaddict","#instagame","#instagood","#gamestagram","#gamerguy","#gamergirl","#gamin","#video","#game","#igaddict","#winning","#play","#playing","#актер","#актриса","#беспризорник","#бессмертных","#биения","#бить","#варенье","#видео","#видео","#видео","#видеодиск","#видеоигры","#восстание","#геймер","#голливудский","#дабстеп","#жанр","#звезда","#игра","#игра","#играть","#игрище","#игровой","#интернете","#кино","#кино","#любовь","#мелодия","#музыка","#останавливает","#песни","#песня","#победивший","#повторять","#поп","#Последователи","#ремикс","#рит","#рэп","#сторона","#театр","#фильм","#фильмы","#хип-хоп","#цифровой","#юмор","#смешноевидео","#прикол","#прикольноевидео","#видос","#видеоролик","#шутка","#пранк","#розыгрыш","#арена","#цирк","#искуство","#театр","#спектакль","#микс","#комикс","#поржать","#смех"};
-        String[] novosti = new String[]{};
+        String[] novosti = new String[]{"#новости","#свежиеновости","#информация","#информациякразмышлению", "#сегодня"};
         String[] svoi_massiv = new String[]{};
         String svoi_text = new String();
 
@@ -44,7 +45,7 @@ Spinner spinner2;
         View.OnClickListener onClickListener = new View.OnClickListener() {
 
             @Override
-            public void onClick(View View) {
+            public void onClick(@NonNull View View) {
                 switch(View.getId()) {
                     case R.id.button:
                         String svoi_text = textInputEditText.getText().toString();
@@ -53,10 +54,12 @@ Spinner spinner2;
                         Integer ostatok = new Integer(0);
 
 
-                            for (int i = 0; i < svoi_massiv.length; i++) {
-                                hashteg = "#" + svoi_massiv[i] + " " + hashteg;
+                        if (svoi_massiv.length > 0){
+                            for (int i = 1; i < svoi_massiv.length; i++) {
+                                hashteg = hashteg + " " + "#" + svoi_massiv[i]  ;
                             }
-                           // if (hashteg.length() < 2 ){hashteg = "";}
+                        }
+
                         switch(spinner2.getSelectedItem().toString()){
                             case "15":
                                 if (svoi_massiv.length < 15) {
@@ -89,11 +92,13 @@ Spinner spinner2;
                         switch(spinner.getSelectedItem().toString()){
                             case "Ноготочки":
                                 if (nogti.length > 0) {
-
                                     for (int j = 0; j < ostatok; j++) {
-                                        hashteg = hashteg + nogti[new Random().nextInt(nogti.length + 1)];
+                                        int rnd = new Random().nextInt(nogti.length + 1);
+                                        if (rnd  > 0 ){rnd = (rnd - 1); }
+                                        hashteg = hashteg + nogti[rnd];
                                     }
-                                }                                break;
+                                }
+                                break;
                             case "Парикмахерская":
                                 if (parikmaherskaya.length > 0) {
                                     for (int j = 0; j < ostatok; j++) {
