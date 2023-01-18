@@ -13,8 +13,16 @@
         android:theme="@style/Theme.Generator"
         tools:targetApi="31">
         <activity
+            android:name=".ActivitySecond"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,6 +33,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4951699938968856~4499531529"/>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
